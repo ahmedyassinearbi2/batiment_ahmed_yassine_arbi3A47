@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Supprimer un bâtiment{% endblock %}
+
+{% block body %}
+<h1>Supprimer le bâtiment "{{ batiment.nom }}"</h1>
+
+<p>supprimer ce bâtiment ?</p>
+
+<a href="{{ path('batiment_delete_confirm', {'id': batiment.id}) }}" class="btn btn-danger">Oui, supprimer</a>
+<a href="{{ path('batiment_index') }}" class="btn btn-secondary">Annuler</a>
+{% endblock %}
