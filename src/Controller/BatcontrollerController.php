@@ -13,7 +13,6 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/batiment')]
 class BatcontrollerController extends AbstractController
 {
-    // LIST ALL
     #[Route('/', name: 'batiment_index')]
     public function index(EntityManagerInterface $em): Response
     {
@@ -24,7 +23,6 @@ class BatcontrollerController extends AbstractController
         ]);
     }
 
-    // ADD NEW BATIMENT
     #[Route('/add', name: 'batiment_add')]
     public function add(Request $request, EntityManagerInterface $em): Response
     {
@@ -43,7 +41,6 @@ class BatcontrollerController extends AbstractController
         ]);
     }
 
-    // EDIT/UPDATE EXISTING BATIMENT
     #[Route('/edit/{id}', name: 'batiment_edit')]
     public function edit(int $id, Request $request, EntityManagerInterface $em): Response
     {
@@ -67,7 +64,6 @@ class BatcontrollerController extends AbstractController
         ]);
     }
 
-    // DELETE CONFIRMATION PAGE
     #[Route('/delete/{id}', name: 'batiment_delete')]
     public function deletePage(int $id, EntityManagerInterface $em): Response
     {
@@ -82,7 +78,6 @@ class BatcontrollerController extends AbstractController
         ]);
     }
 
-    // DELETE ACTION
     #[Route('/delete/confirm/{id}', name: 'batiment_delete_confirm')]
     public function deleteConfirm(int $id, EntityManagerInterface $em): Response
     {
